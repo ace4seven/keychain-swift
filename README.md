@@ -203,6 +203,17 @@ keychain.set(dataObject, forKey: "my key")
 keychain.getData("my key", asReference: true)
 ```
 
+### Property wrapper
+Use `@KeychainValue` as a property wrapper. Supports both primitive values and objects conforming to Codable protocol.
+
+```Swift
+@KeychainValue("string_value_key", defaultValue: nil)
+var stringValue: String?
+
+@KeychainValue("codable_object_key", defaultValue: nil)
+var codableObject: CodableObject?
+```
+
 ## Using KeychainSwift from Objective-C
 
 [This manual](https://github.com/evgenyneu/keychain-swift/wiki/Using-KeychainSwift-in-Objective-C-project) describes how to use KeychainSwift in Objective-C apps.
